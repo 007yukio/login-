@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'blogs' => 'blogs#new'
+  get 'blogs' => 'blogs#index'
     resources :blogs do
       collection do
         post :confirm  
