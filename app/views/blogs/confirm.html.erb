@@ -1,3 +1,5 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
 <h3>以下の内容で、送信する。</h3>
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
@@ -6,11 +8,14 @@
 
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
-  <%= form.submit  "登録する" %>
+  <%= form.submit  "登録する",class: 'btn btn-primary btn-block' %>
 <% end %>
 
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <%= form.submit "もどる", name: 'back' %>
+  <%= form.submit "もどる", name: 'back',class: 'btn btn-default btn-block' %>
 <% end %>
+
+ </div>
+</div>

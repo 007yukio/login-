@@ -1,26 +1,18 @@
-<h1>ブログ一覧</h1>
-
-<p><%= notice %></p>
-
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
-    <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-
-</table>
-
-<br>
-<%= link_to 'プログラマ名言へ', 'https://furien.jp/columns/245/'  %>
-<br>
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<div class='container'>
+  <div class="wrappaer col-md-8 col-md-offset-2 col-sm-10">
+    <h1>List</h1>
+    <p><%= notice %></p>
+    
+    <% @blogs.each do |blog| %>
+      <div class='row'>
+        <h3>Title</h3>
+        <h4><strong><%= blog.title %></strong></h4>
+        <h3>Contents</h3>
+        <h4><strong><%= blog.content %></strong></h4>
+            <%= link_to "編集する", edit_blog_path(blog.id),class: 'btn btn-default btn-sm 	btn-default' %>
+            <%= link_to '削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } ,class: 'btn btn-default btn-sm btn btn-danger' %>
+            <br>
+      </div>
+    <% end %>
+  </div>
+</div>

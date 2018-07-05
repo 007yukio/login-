@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample</title>
+    <title>E=mc*2</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+
+<header>
+  <ul>
+    <li><%=link_to "ホーム",root_path %></li>
+    <li><%=link_to "書く",new_blog_path %></li>
+    <li><%= link_to 'プログラマ名言へ', 'https://furien.jp/columns/245/'  %></li>
+  </ul>
+</header>
+
+<%= yield %>
+
+<footer>
+  <p>© 1566-2150 Copyright Tequila Sunrise Corp.</p>
+  <!--<p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>-->
+</footer>
+
+</body>
 </html>

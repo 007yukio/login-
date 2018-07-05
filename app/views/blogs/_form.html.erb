@@ -3,24 +3,28 @@
     <div>
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
       <ul>
-
-      <% @blog.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>  
   <% end %>
 
   <div>
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, size: "75"%>
   </div>
   <div>
     <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div><br>
+    <%= form.text_area :content, size: "77x5" %>
+  </div>
   
-  <%= form.submit %>
+  <%= form.submit'投稿する',class:'btn btn-primary btn-block' %>
+  <br>
+
 <% end %>
 
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
+<%= link_to "一覧画面にもどる", blogs_path %>
+
+</div>
+</div>
