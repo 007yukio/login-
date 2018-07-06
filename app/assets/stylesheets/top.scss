@@ -62,10 +62,11 @@ footer {
   font-size: 12px;
   position: absolute;
   bottom: 0;
+  position: fixed;            /* フッターの固定 */
 }
 
 html {
   position: relative;
   min-height: 100%;
-  
+  overflow-y: scroll; 
 }

@@ -2,7 +2,8 @@
   <div class="wrappaer col-md-8 col-md-offset-2 col-sm-10">
     <h1>List</h1>
     <p><%= notice %></p>
-    
+    <section class="main-header">
+      
     <% @blogs.each do |blog| %>
       <div class='row'>
         <h3>Title</h3>
@@ -14,5 +15,7 @@
             <br>
       </div>
     <% end %>
+    </section>
+    
   </div>
 </div>
