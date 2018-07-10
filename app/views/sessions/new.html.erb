@@ -1,0 +1,15 @@
+<div class='container'>
+  <div class="wrappaer col-md-8 col-md-offset-2 col-sm-10">
+<h1>Log in</h1>
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+
+  <p><%= f.label :email %></p>
+  <p><%= f.email_field :email %></p>
+
+  <p><%= f.label :password %></p>
+  <p><%= f.password_field :password %></p>
+
+  <p><%= f.submit "Log in" %></p>
+<% end %>
+</div>
+</div>

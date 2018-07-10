@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
-    get 'blogs' => 'blogs#index'
-    resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy]do
-      collection do
-        post :confirm  
-      end
-    end
+  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy]do
     
-  root'top#index'
+    #collection は全部のデータに対するアクションに利用する。
+    collection do
+      post :confirm
+      get  :top
+    end
+  end
+  
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users 
+  
+  root'sessions#new'
 end
