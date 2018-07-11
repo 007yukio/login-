@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy]do
+  resources :blogs, only: [:index, :new, :create, :edit, :update, :show, :destroy]do
     #collection は全部のデータに対するアクションに利用。
     collection do
       post :confirm
