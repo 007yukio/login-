@@ -67,7 +67,6 @@ class BlogsController < ApplicationController
     unless current_user
       flash[:notice] = '失敗しました'
       render new_session_path
-      #redirect_to new_session_path
     end
   end
 end
