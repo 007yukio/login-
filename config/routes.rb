@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
-  
+
+=begin 
+  resourcesは、自動でRESTfulなルート定義する。
+  #基本構文
+    resources :name
+    nameはリソース名
+  #RESTful -> RESTの性質を持つ
+    REST
+      Webのしくみを形作るための大枠に なる取り決め（制約）
+      "REST"の枠に入るのが Webのパーツ HTML HTTP URL etc..
+  #collection は全てのデータに対するアクションに利用。
+=end
+
   resources :blogs, only: [:index, :new, :create, :edit, :update, :show, :destroy]do
-    #collection は全部のデータに対するアクションに利用。
     collection do
       post :confirm
       get  :top
