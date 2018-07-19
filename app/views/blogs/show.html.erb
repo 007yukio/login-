@@ -1,5 +1,23 @@
-<h1>詳細画面</h1>
-<p>タイトル: <%= @blog.title %></p>
-<p>内容: <%= @blog.content %></p>
-
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
+<div class='container'>
+  <div class="wrappaer col-md-8 col-md-offset-2 col-sm-10">
+    <h1>Details</h1>
+      <p>Title: <%= @blog.title %></p>
+      <p>Content: <%= @blog.content %></p>
+      
+      <div class='row'>
+        
+        <% unless @blog.user == current_user.id %>
+          <% if @favorite.present? %>
+            <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+          <% end %>
+        <% end %>
+        <br>
+        <br>
+        <%= link_to "ブログ一覧画面にもどる", blogs_path, class: 'btn btn-primary' %>
+        
+      </div>
+      
+  </div>
+</div>

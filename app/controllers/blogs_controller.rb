@@ -3,7 +3,6 @@ class BlogsController < ApplicationController
   before_action :login_ck, only: [:new, :edit, :show, :destroy]
   
   def index
-      
     @blogs = Blog.all
     # binding.pry
     # raise
@@ -18,7 +17,8 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    #@blog = Blog.find(params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   
   def create
@@ -55,12 +55,13 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
-  
+
+
   private
   def blog_params
     params.require(:blog).permit(:title, :content)
   end
-  
+
   def set_blog
     @blog = Blog.find(params[:id])
   end

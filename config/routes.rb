@@ -28,5 +28,8 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :favorites, only: [:create, :destroy]
+  
+  get '/favorites/show', to: 'favorites#show'
   root'sessions#new'
 end
