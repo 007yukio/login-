@@ -3,9 +3,7 @@
     <h1>Details</h1>
       <p>Title: <%= @blog.title %></p>
       <p>Content: <%= @blog.content %></p>
-      
       <div class='row'>
-        
         <% unless @blog.user == current_user.id %>
           <% if @favorite.present? %>
             <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
@@ -16,7 +14,6 @@
         <br>
         <br>
         <%= link_to "ブログ一覧画面にもどる", blogs_path, class: 'btn btn-primary' %>
-        
       </div>
       
   </div>
