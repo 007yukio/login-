@@ -10,7 +10,16 @@ Rails.application.routes.draw do
       Webのしくみを形作るための大枠に なる取り決め（制約）
       "REST"の枠に入るのが Webのパーツ HTML HTTP URL etc..
   #collection は全てのデータに対するアクションに利用。
+  #ルートの個別設定
+    get 'photos'：HTTPメソッド「GET」＋URL「http://localhost:3000/photos」のリクエストを条件とする
+    to: 'photos#index'：photosコントローラーのindexアクションを呼び出す
 =end
+
+  resources :top do
+    collection do
+      post :index
+    end
+  end
 
   resources :blogs, only: [:index, :new, :create, :edit, :update, :show, :destroy]do
     collection do
@@ -20,16 +29,9 @@ Rails.application.routes.draw do
   end
   
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
   resources :users 
   
-  resources :top do
-    collection do
-      post :index
-    end
-  end
-  
-  resources :favorites, only: [:create, :destroy]
-  
-  get '/favorites/show', to: 'favorites#show'
+  get 'favorites', to: 'favorites#show'
   root'sessions#new'
 end
