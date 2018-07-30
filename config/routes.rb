@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :contacts
 =begin
   #ルート一括設定
   resources（複数）
@@ -43,4 +44,9 @@ Rails.application.routes.draw do
   
   get 'favorites', to: 'favorites#show'
   root'sessions#new'
+  
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
 end
