@@ -14,19 +14,17 @@
     <% end %>
 
     <%= form_with(model: @user, local: true) do |f| %>
-      <p><%= f.label :name %></p>
-      <p><%= f.text_field :name %></p>
-      
-      <p><%= f.label :email %></p>
-      <p><%= f.email_field :email %></p>
-      
-      <p><%= f.label :password %></p>
-      <p><%= f.password_field :password %></p>
-      
-      <p><%= f.label :password_confirmation %></p>
-      <p><%= f.password_field :password_confirmation %></p>
-      
-      <p><%= f.submit "Create my account" %></p>
+    
+    
+    <p><%= f.file_field :icon, id: :feed_icon %></p>
+    <p><%= f.hidden_field :icon_cache %><br></p>
+    
+    <h4 class='center'>name:<br><%= f.text_field :name %></h4><br>
+    <h4 class='center'>email:<br><%= f.email_field :email %></h4><br>
+    <h4 class='center'>password:<br><%= f.password_field :password %></h4><br>
+    <h4 class='center'>password_confirmation:<br><%= f.password_field :password_confirmation %></h4><br
+    <br>
+    <h4 class='center'><%= f.submit "Create my account" %></h4>
     <% end %>
   </div>
 </div>

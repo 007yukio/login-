@@ -3,9 +3,10 @@
     <h1>List</h1>
     <p><%= notice %></p>
     <section class="main-header">
-      
-    <% @blogs.each do |blog| %>
+      <% @blogs.each do |blog| %>
       <div class='row'>
+        <h3>img</h3>
+        <h4><%= image_tag blog.image %></h4>
         <h3>Title</h3>
         <h4><strong><%= blog.title %></strong></h4>
         <h3>Contents</h3>

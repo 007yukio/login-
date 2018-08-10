@@ -10,10 +10,20 @@
     </div>  
   <% end %>
 
+<div>
+<p>
+  <strong>Image:</strong>
+  <%= @blog.image %>
+  <p><%= image_tag(@blog.image.url) if @blog.image.url %></p>
+  <%= form.file_field :image, id: :feed_image %>
+</p>
+</div>
+
   <div>
     <%= form.label :title %>
     <%= form.text_field :title, size: "75"%>
   </div>
+  
   <div>
     <%= form.label :content %>
     <%= form.text_area :content, size: "77x5" %>

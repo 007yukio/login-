@@ -52,7 +52,15 @@ h1.sign {
   display: block;
   margin: 0 auto;
   width: 21%;
-  padding-top: 5%;}
+  padding-top: 5%;
+}
+
+p.sign {
+  display: block;
+  margin: 0 auto;
+  width: 21%;
+  padding-top: 5%;
+}
 
 h3 {
   background-color: #ccffff
@@ -83,4 +91,8 @@ html {
   position: relative;
   min-height: 100%;
   overflow-y: scroll; 
+}
+
+h4.center{
+  text-align: center;  
 }
